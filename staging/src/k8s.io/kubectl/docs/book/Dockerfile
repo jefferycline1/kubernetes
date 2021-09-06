@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM python:3.7
+FROM python:3.8.10
 
 EXPOSE 4000
 RUN curl -sL https://deb.nodesource.com/setup_11.x | bash
