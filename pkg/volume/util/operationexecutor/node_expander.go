@@ -201,7 +201,7 @@ func (ne *NodeExpander) expandOnPlugin() (bool, resource.Quantity, error) {
 		// expansion operation should not block mounting
 		if volumetypes.IsFailedPreconditionError(resizeErr) {
 			ne.actualStateOfWorld.MarkForInUseExpansionError(ne.vmt.VolumeName)
-			klog.Error(ne.vmt.GenerateErrorDetailed("MountVolume.NodeExapndVolume failed with %v", resizeErr).Error())
+			klog.Error(ne.vmt.GenerateErrorDetailed("MountVolume.NodeExpandVolume failed with %v", resizeErr).Error())
 			ne.testStatus = testResponseData{assumeResizeFinished: true, resizeCalledOnPlugin: true}
 			return false, ne.pluginResizeOpts.OldSize, nil
 		}
